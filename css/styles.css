@@ -1,0 +1,97 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background-color: #fff;
+  padding: 0;
+  margin: 0;
+}
+
+header {
+  padding: 20px 0;
+  background: linear-gradient(#ffedb8, white);
+}
+
+.boton-jugada {
+  background-color: #fff964;
+  color: #000;
+  padding: 20px 80px;
+  font-size: 18px;
+  cursor: pointer;
+  border-radius: 7px;
+  border: none;
+  margin: 10px;
+}
+
+.boton-jugada:is(:hover, :active) {
+  background-color: #efed47;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+}
+
+#resultados {
+  font-size: 20px;
+  margin: 40px auto;
+  width: 40%;
+  border: 2px dotted #5b118d;
+  border-radius: 20px;
+  padding: 20px 0px;
+  background-color: #f6f6f6ad;
+  color: #000;
+  box-shadow: rgb(132 76 175 / 31%) 0px 30px 90px;
+  cursor: default;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.content img {
+  width: 160px;
+  height: 120px;
+}
+
+.usuario, 
+.maquina {
+  margin: 20px;
+}
+
+#juego {
+  width: 400px;
+  height: 140px;
+  margin-top: 60px;
+}
+
+@keyframes ganaUsuario {
+  0% {
+    color: #000;
+  }
+  20% {
+    color: #1aa1e4;
+    transform: scale(1.3);
+  }
+  100% {
+    color: #1aa1e4;
+  }
+}
+
+@keyframes ganaMaquina {
+  0% {
+    color: #000;
+  }
+  20% {
+    color: #ec0404;
+    transform: scale(1.3);
+  }
+  100% {
+    color: #ec0404;
+  }
+}
+
+.contador-ordenador {
+  animation: ganaMaquina 1s;
+}
+
+.contador-usuario {
+  animation: ganaUsuario 1s;
+}

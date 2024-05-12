@@ -1,0 +1,44 @@
+let listaUsuario = document.getElementById('listaUsuarios');
+
+//Función para obtener usuarios
+const getUsers = () => {
+
+    //Llamada a API
+    fetch(`https://jsonplaceholder.typicode.com/users`)
+        .then ((response) => {
+            if(!response.ok) {
+                throw new Error('La solicitud falló');
+            }
+            return response.json();
+        })
+        .then((data) => {
+
+            for(let i=0; i < data.length; i++) {
+               console.log(data);
+               listaUsuario.innerHTML += `
+                    <li class="usuario">
+                        <div class="info">
+                            <div>
+                                <p><b>Nombre: </b>${data[i].name}</p>
+                                <p><b>Edad: </b></p>
+                                <p><b>Username: </b>${data[i].username}</p>
+                                <p><b>Teléfono: </b>${data[i].phone}</p>
+                                <p><b>Email: </b>${data[i].email}</p>
+                            </div>
+                            <img src='../assets/img/1.jpeg' alt=${data[i].username}>
+                        </div>
+                        <div>
+                            <p><b>Compañia: </b>${data[i].company.name}</p>
+                            <p><b>Dirección: </b>${data[i].address.street}, ${data[i].address.suite}, ${data[i].address.city}</p>
+                        </div>
+                    </li>
+                `;
+
+            }
+
+        
+        })
+        .catch((error) => console.error('Error:', error));
+}
+
+getUsers();

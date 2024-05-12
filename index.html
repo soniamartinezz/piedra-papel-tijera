@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="./css/styles.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.4.2/css/all.css">
+  <title>Piedra, papel, tijera</title>
+</head>
+<body>
+  <header>
+    <button class="boton-jugada" data-jugada="piedra">
+      <i class="fas fa-hand-rock"></i>
+      Piedra
+    </button>
+    <button class="boton-jugada" data-jugada="papel">
+      <i class="fas fa-hand-paper"></i>
+      Papel
+    </button>
+    <button class="boton-jugada" data-jugada="tijera">
+      <i class="fas fa-hand-scissors"></i>
+      Tijera
+    </button>
+  </header>
+  <div id="resultados">
+    <p id="contador-usuario" class="contador-usuario">Tus puntos: 0</p>
+    <p id="contador-ordenador" class="contador-ordenador">Puntos de la máquina: 0</p>  
+  </div>
+  <img id="juego" src="./assets/inicial.png" alt="juego">
+
+  <!-- Nueva implementación -->
+  <div id="content" class="content" style="display: none;">
+    <div class="maquina">
+      <h2 >Máquina</h2>
+      <img id="maquina-papel" src="./assets/papel.jpg" alt="papel" hidden>
+      <img id="maquina-piedra" src="./assets/piedra.jpg" alt="papel" hidden>
+      <img id="maquina-tijera" src="./assets/tijera.jpg" alt="papel" hidden>
+    </div>
+    <div class="usuario">
+      <h2>Tú</h2>
+      <img id="usuario-papel" src="./assets/papel.jpg" alt="papel" hidden>
+      <img id="usuario-piedra" src="./assets/piedra.jpg" alt="papel" hidden>
+      <img id="usuario-tijera" src="./assets/tijera.jpg" alt="papel" hidden>
+    </div>
+  </div>
+
+  <script src="./js/script.js"></script>
+</body>
+</html>
